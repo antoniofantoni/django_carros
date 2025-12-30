@@ -18,8 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from app import settings
 from django.conf.urls.static import static
+from cars.views import cars_views
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
    
+urlpatterns = [
+    path('admin/', admin.site.urls),    # admin é o que o usuario digita na URL
+    path('cars/', cars_views), # cars é o que o usuario digita na URL e 
+    # cars_views é a função que vai processar a requisição
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
