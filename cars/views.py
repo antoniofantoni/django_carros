@@ -2,4 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 def cars_views(request):
-    return render(request, 'cars.html')
+    return render(
+        request, 
+        'cars.html',
+        {'cars': {'model': 'Astra 2.0'}}
+        )
